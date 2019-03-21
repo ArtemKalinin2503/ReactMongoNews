@@ -16,3 +16,10 @@
 
 - Обратить внимание: запуск сервера должен быть только после запуска mongoDB (процесс mongod должен висеть в выполняемых)
 
+- Ссылка в помощь если проблемы с Mongo - https://github.com/ArtemKalinin2503/ExpressMongoDB
+
+В данном приложение используется связка технологий:
+
+- React/Redux/Saga/MongoDB/Express(node server)/Mongoose(для конетка с MongoDB)
+
+- Работа С БД на начальном этапе с помощью программы Postman (ссылка в помощь: https://github.com/ArtemKalinin2503/ExpressMongoDB) 
