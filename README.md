@@ -20,6 +20,6 @@
 
 В данном приложение используется связка технологий:
 
-- React/Redux/Saga/MongoDB/Express(node server)/Mongoose(для конетка с MongoDB)
+- React/Redux/Saga/MongoDB/Express(node server)/Mongoose(для конекта с MongoDB)
 
 - Работа С БД на начальном этапе с помощью программы Postman (ссылка в помощь: https://github.com/ArtemKalinin2503/ExpressMongoDB) 
