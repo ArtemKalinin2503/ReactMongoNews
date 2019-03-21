@@ -1,0 +1,82 @@
+body {
+	background: #e2e891;
+}
+
+.wrapper-component-app {
+	
+}
+
+.wrapper-component-news {
+    padding: 40px;
+}
+
+.wrapper-news {
+	border: 2px solid #bcc359;
+	background: #d4d788;
+	padding: 20px;
+	text-align: center;
+	width: 100%;
+	margin: auto;
+    margin-bottom: 20px;
+}
+
+.news-text {
+	color: white;
+	font-size: 24px;
+}
+
+.btn-add-news {
+	background: #cf487f;
+	color: white;
+	padding: 10px;
+	border: 2px solid #ca7879;
+	margin-bottom: 20px;	
+	margin: auto;
+	display: block;
+    margin-bottom: 20px;
+}
+
+.btn-news-edit {
+	color: white;
+	background: #5db7c8;
+	border: 2px solid #468981;
+	padding: 10px;
+	margin-right: 10px;
+}
+
+.btn-news-delete {
+	color: white;
+	background: #d7a375;
+	border: 2px solid #a48331;
+	padding: 10px;
+}
+
+.btn-save {
+	background: #60db70;
+	color: white;
+	padding: 10px;
+	border: 2px solid #44ab4c;
+	margin: auto;
+}
+
+.input-edit-news {
+	background: white;
+    color: black;
+    border: 1px solid #787a8b;
+    padding: 10px;
+    width: 100%;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+
+.edit-active {
+	display: none;
+}
+
+.no-active-edit-news {
+	display: none;
+} 
+
+.active-edit-news {
+	display: block;
+}
