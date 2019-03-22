@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
-import {todoApp} from './reducers/index';
 import './App.css';
 import NewsComponent from './components/News';
 import { actionAddNews } from './action';
