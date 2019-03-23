@@ -18,9 +18,10 @@ class App extends Component {
 
   	const listNews = this.props.news.map((item, index) => { 
 			return <NewsComponent
+                item={item}
 				        key={item.index} 
                 index={index}
-				        id={index} 
+				        item-id={item._id} 
                 description={item.description}   
              />;
 		});

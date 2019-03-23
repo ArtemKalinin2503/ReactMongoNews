@@ -63,6 +63,10 @@ function deleteNews(id) {
     return NewsModel.findById(id).remove();
 };
 
+function updateNews(id,description) {
+    return NewsModel.updateOne({_id:id}, {description: description});
+}
+
 {/*--Опишем основные запросы к БД--*/}
 
 //Метод post будет создавать записи в БД
@@ -77,6 +81,9 @@ app.get('/news', (req, res) => {
     listNews().then(data => res.send(data));
 });
 
+app.put("/news/:id", (req, res) => {
+    updateNews(req.params.id, req.body.description).then(data=>res.send(data));
+})
 //Метод delete будет удалять данные из БД
 app.delete('/news/:id', (req, res) => {
     //Вызовим звпрос deleteeNews

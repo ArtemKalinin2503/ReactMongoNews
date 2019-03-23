@@ -6,7 +6,9 @@ export const initState = {
         id: 1,
         description: 'новость 1 из Redux'
     }
-  ]
+  ],
+  isGettingNews: false,
+  error: ""
 };
 
 const mainReducer = (state = initState, action) => {
@@ -33,7 +35,22 @@ const mainReducer = (state = initState, action) => {
             return {
                 ...state,
                news: arrDeleteNews
-            };                   
+            }; 
+        case "SET_NEWS":
+            return {
+                ...state,
+                news: action.payload
+            };
+        case "SET_IS_GETTING_NEWS":
+            return {
+                ...state,
+                isGettingNews: action.payload
+            };
+        case "SET_NEWS_ERORR":
+            return {
+                ...state,
+                error: action.payload
+            };
         default:
             return state;       
     }

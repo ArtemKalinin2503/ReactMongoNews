@@ -1,21 +1,9 @@
 //Actions
-export const actionUpdateNews = (index, isUpdatingNews) => {return {type: "Action_Uptade_News", index: index, payload: isUpdatingNews}};
-export const actionAddNews = (isAddNews) => {return {type: "Action_Add_News", payload: isAddNews}};
-export const actionDeleteNews = (index, isDeleteNews) => {return {type: "Action_Delete_News", index: index, payload: isDeleteNews}};
-//Actions для сетевого запроса
-export const FETCH_NEWS_REQUEST = 'FETCH_NEWS_REQUEST';
-export const FETCH_NEWS_SUCCESS = 'FETCH_NEWS_SUCCESS';
-export const FETCH_NEWS_FAILURE = 'FETCH_NEWS_FAILURE';
+export const actionUpdateNews = (updatedNews) => {return {type: "UPDATE_NEWS", payload: updatedNews}};
+export const actionAddNews = (addedNews) => {return {type: "ADD_NEWS", payload: addedNews}};
+export const actionDeleteNews = (id) => {return {type: "DELETE_NEWS", payload: id}};
+export const actionGetNews = () => {return {type: "GET_NEWS"}}
 
-export const fetchNewsRequest = () => ({
-    type: FETCH_NEWS_REQUEST
-});
-
-export const fetchNewsSuccess = payload => ({
-    type: FETCH_NEWS_SUCCESS,
-    payload
-});
-
-export const fetchNewsFailure = () => ({
-    type: FETCH_NEWS_FAILURE
-});
+export const actionSetNews = (news) => {return {type: "SET_NEWS", payload: news}};
+export const actionSetIsGettingNews = (isGettingNews) => {return {type: "SET_IS_GETTING_NEWS", payload: isGettingNews}};
+export const actionSetNewsError = (erorr) => {return {type: "SET_NEWS_ERORR", payload: erorr}};

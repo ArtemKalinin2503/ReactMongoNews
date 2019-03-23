@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'; //connect нужен для связи компонента со store
-import {actionUpdateNews, actionDeleteNews} from '../action';
+import {actionUpdateNews, actionDeleteNews, actionGetNews} from '../action';
 import { store } from '../store';
 class News extends Component {
 
@@ -11,6 +11,9 @@ class News extends Component {
         }
     };
 
+    componentDidMount(){
+        this.props.getNews();
+    }
     //Кнопка Редактировать
     handleEditNews = () => {
         this.setState({
@@ -25,13 +28,16 @@ class News extends Component {
         this.setState({
             edit: !this.state.edit
         });     
-        store.dispatch(actionUpdateNews(index, inputEditNews));
+        store.dispatch(actionUpdateNews({
+            _id: this.props.item._id,
+            description: inputEditNews
+        }));
     };
 
     //Кнопка Удалить
     handleDeleteNews= () => {
-        let index = this.props.index;
-        store.dispatch(actionDeleteNews(index));
+        let index = this.props.item;
+        store.dispatch(actionDeleteNews(index._id));
     };
 
     render() {
@@ -50,9 +56,12 @@ class News extends Component {
 const mapStateToProps= (state,ownProps={})=>({
     news: state.mainReducer.news,
 });
+const mapDispatchToProps = {
+    getNews: actionGetNews
+}
 
 const NewsComponent = connect(
-    mapStateToProps,
+    mapStateToProps, mapDispatchToProps
 )(News)
 
 export default NewsComponent;
