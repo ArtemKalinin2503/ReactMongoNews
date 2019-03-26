@@ -63,6 +63,7 @@ function deleteNews(id) {
     return NewsModel.findById(id).remove();
 };
 
+//Создадим метод который будет изменять записи в БД
 function updateNews(id,description) {
     return NewsModel.updateOne({_id:id}, {description: description});
 }
@@ -75,12 +76,13 @@ app.post('/news', (req, res) => {
     createNews(req.body).then(data => res.send(data));  
 });
 
-//Метод get будет вывводить данные из БД
+//Метод get будет выводить данные из БД
 app.get('/news', (req, res) => {
     //Вызовим запрос listNews
     listNews().then(data => res.send(data));
 });
 
+//Метод put будет изменять данные из БД
 app.put("/news/:id", (req, res) => {
     updateNews(req.params.id, req.body.description).then(data=>res.send(data));
 })

@@ -12,8 +12,9 @@ class News extends Component {
     };
 
     componentDidMount(){
-        this.props.getNews();
-    }
+        this.props.getNews(); //Данный action будет получать данные из БД
+    };
+
     //Кнопка Редактировать
     handleEditNews = () => {
         this.setState({
@@ -24,10 +25,11 @@ class News extends Component {
     //Кнопка Сохранить
     handleSaveNews = () => {
         let inputEditNews = this.refs.newEditNews.value; 
-        let index = this.props.index;
+
         this.setState({
             edit: !this.state.edit
-        });     
+        });
+
         store.dispatch(actionUpdateNews({
             _id: this.props.item._id,
             description: inputEditNews
@@ -56,6 +58,7 @@ class News extends Component {
 const mapStateToProps= (state,ownProps={})=>({
     news: state.mainReducer.news,
 });
+
 const mapDispatchToProps = {
     getNews: actionGetNews
 }
